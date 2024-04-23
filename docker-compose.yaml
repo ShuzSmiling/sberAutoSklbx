@@ -91,9 +91,11 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: p76Se7BoVbrn
-      MARIADB_DATABASE: monitoring
+      MARIADB_DATABASE: user_metrics
       MARIADB_USER: admin
       MARIADB_PASSWORD: NoPasaran1842
+    ports:
+      - '3306:3306'
     volumes:
       - ./init:/docker-entrypoint-initdb.d
 
