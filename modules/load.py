@@ -3,6 +3,7 @@ from sqlalchemy import create_engine
 import pandas as pd
 import os
 
+PATH = os.environ.get('PROJECT_PATH', '.')
 
 def load(data_file, table, database_port):
     """
@@ -34,15 +35,17 @@ def load(data_file, table, database_port):
 
 
 if __name__ == '__main__':
-    file_lists = {'../data/csv_files/ga_sessions.csv': 'user_session',
-                  '../data/csv_files/ga_hits.csv': 'user_hits'}
+    file_lists = {f'{PATH}/data/csv_files/ga_sessions.csv': 'user_session',
+                  f'{PATH}/data/csv_files/ga_hits.csv': 'user_hits'}
     flag = 0
 
     for i, k in file_lists.items():
         flag += 1
         print(f'Загружаем данные в таблицу {k}')
-        load(data_file=i, table=k, database_port='admin:NoPasaran1842@localhost:3306/user_metrics')
+        load(data_file=i, table=k, database_port='admin:NoPass123@db:3306/user_metrics')
         print(f'Загрузка завершена - {flag}/{len(file_lists)}')
+
+
 
 
 

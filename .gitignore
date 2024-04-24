@@ -1,4 +1,6 @@
 .venv
 .idea
-logs
-data
+logs/*
+.obsidian
+data/csv_files/*
+data/test_json/*

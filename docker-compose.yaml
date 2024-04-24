@@ -93,7 +93,7 @@ services:
       MARIADB_ROOT_PASSWORD: p76Se7BoVbrn
       MARIADB_DATABASE: user_metrics
       MARIADB_USER: admin
-      MARIADB_PASSWORD: NoPasaran1842
+      MARIADB_PASSWORD: NoPass123
     ports:
       - '3306:3306'
     volumes:
